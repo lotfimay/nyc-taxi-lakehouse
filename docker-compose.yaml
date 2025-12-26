@@ -1,0 +1,68 @@
+
+services:
+  minio:
+    image: minio/minio:latest
+    container_name: minio
+    environment:
+      MINIO_ROOT_USER: admin
+      MINIO_ROOT_PASSWORD: password
+    command: server /data --console-address ":9001"
+    ports:
+      - "9000:9000"   
+      - "9001:9001"   
+    volumes:
+      - minio-data:/data
+    networks:
+      - lakehouse
+
+  catalog-db:
+    image: postgres:16
+    container_name: catalog-db
+    environment:
+      POSTGRES_USER: iceberg
+      POSTGRES_PASSWORD: iceberg
+      POSTGRES_DB: iceberg
+    ports:
+      - "5433:5432"   
+    volumes:
+      - catalog-db-data:/var/lib/postgresql/data
+    networks:
+      - lakehouse
+
+  trino:
+    image: trinodb/trino:latest
+    container_name: trino
+    depends_on:
+      - minio
+      - catalog-db
+    ports:
+      - "8080:8080"
+    networks:
+      - lakehouse
+    volumes:
+      - ./trino/catalog:/etc/trino/catalog
+
+  dbt:
+    image: python:3.11-slim
+    container_name: dbt-trino
+    working_dir: /usr/app
+    depends_on:
+      - trino
+    networks:
+      - lakehouse
+    volumes:
+      - ./dbt:/usr/app          
+      - ./dbt_profiles:/root/.dbt  
+    command: >
+      /bin/sh -c "
+      pip install --no-cache-dir dbt-core dbt-trino &&
+      tail -f /dev/null
+      "
+
+networks:
+  lakehouse:
+    driver: bridge
+
+volumes:
+  minio-data:
+  catalog-db-data:
