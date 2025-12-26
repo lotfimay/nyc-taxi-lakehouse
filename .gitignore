@@ -1,0 +1,10 @@
+# OS / editor files
+.DS_Store
+.vscode/
+.idea/
+
+# Python bytecode
+__pycache__/
+
+# Docker junk
+*.pid

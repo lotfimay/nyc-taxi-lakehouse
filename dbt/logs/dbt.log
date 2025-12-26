@@ -1,0 +1,30 @@
+[0m16:04:00.464678 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019D4DC3C670>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019D4ED183D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019D4ED181C0>]}
+
+
+============================== 16:04:00.551640 | e9a5cab1-2538-41d0-989e-7f403df81347 ==============================
+[0m16:04:00.551640 [info ] [MainThread]: Running with dbt=1.11.2
+[0m16:04:00.551640 [debug] [MainThread]: running dbt with arguments {'profiles_dir': 'C:\\Users\\lotfi\\.dbt', 'invocation_command': 'dbt init nyc_taxi_lakehouse', 'target_path': 'None', 'no_print': 'None', 'cache_selected_only': 'False', 'warn_error': 'None', 'log_path': 'logs', 'fail_fast': 'False', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True', 'indirect_selection': 'eager', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'partial_parse': 'True', 'version_check': 'True', 'use_experimental_parser': 'False', 'quiet': 'False', 'introspect': 'True', 'empty': 'None', 'log_cache_events': 'False', 'debug': 'False', 'log_format': 'default', 'use_colors': 'True', 'printer_width': '80', 'write_json': 'True'}
+[0m16:04:00.704420 [info ] [MainThread]: Creating dbt configuration folder at C:\Users\lotfi\.dbt
+[0m16:04:00.710367 [debug] [MainThread]: Starter project path: C:\Users\lotfi\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\include\starter_project
+[0m16:04:00.804481 [info ] [MainThread]: 
+Your new dbt project "nyc_taxi_lakehouse" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m16:04:00.804481 [info ] [MainThread]: Setting up your profile.
+[0m16:04:25.981174 [info ] [MainThread]: Profile nyc_taxi_lakehouse written to C:\Users\lotfi\.dbt\profiles.yml using target's sample configuration. Once updated, you'll be able to start developing with dbt.
+[0m16:04:25.994283 [debug] [MainThread]: Command `dbt init` succeeded at 16:04:25.994283 after 25.77 seconds
+[0m16:04:25.994283 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019D4DC3C670>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019D4ED053C0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019D4ED18100>]}
+[0m16:04:25.995293 [debug] [MainThread]: Flushing usage events
+[0m16:04:27.077718 [debug] [MainThread]: An error was encountered while trying to flush usage events

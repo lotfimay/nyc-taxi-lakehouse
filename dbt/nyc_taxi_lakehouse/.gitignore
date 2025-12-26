@@ -1,0 +1,12 @@
+# dbt build artifacts
+target/
+dbt_packages/
+logs/
+
+# compiled sql
+manifest.json
+run_results.json
+
+# temporary outputs
+*.pyc
+*.log

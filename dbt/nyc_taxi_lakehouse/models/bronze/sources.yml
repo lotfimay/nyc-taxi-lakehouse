@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+ - name: nyc_taxi
+   database: iceberg
+   schema: bronze
+   tables: 
+    - name: yellow_tripdata_2023
