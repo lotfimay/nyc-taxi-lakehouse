@@ -10,7 +10,7 @@ models:
       - name: dropoff_ts
         tests:
           - not_null
-      - name: trip_distance
+      - name: trip_distance_km
         tests:
           - not_null
       - name: total_amount
