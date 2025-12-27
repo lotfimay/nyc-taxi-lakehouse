@@ -8,3 +8,6 @@ __pycache__/
 
 # Docker junk
 *.pid
+
+dbt_profiles/.user.yml
+logs/

@@ -10,3 +10,5 @@ run_results.json
 # temporary outputs
 *.pyc
 *.log
+
+nyc_taxi_lakehouse/logs

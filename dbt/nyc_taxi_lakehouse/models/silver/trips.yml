@@ -1,0 +1,27 @@
+version: 2
+
+models:
+  - name: trips
+    description: "Silver layer: cleaned yellow taxi trips for 2023"
+    columns:
+      - name: pickup_ts
+        tests:
+          - not_null
+      - name: dropoff_ts
+        tests:
+          - not_null
+      - name: trip_distance
+        tests:
+          - not_null
+      - name: total_amount
+        tests:
+          - not_null
+      - name: passenger_count
+        tests:
+          - not_null
+      - name: year
+        tests:
+          - not_null
+      - name: month
+        tests:
+          - not_null

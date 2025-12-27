@@ -1,9 +1,7 @@
+name: "nyc_taxi_lakehouse"
+version: "1.0.0"
 
-name: 'nyc_taxi_lakehouse'
-version: '1.0.0'
-
-profile: 'nyc_taxi_lakehouse'
-
+profile: "nyc_taxi_lakehouse"
 
 model-paths: ["models"]
 analysis-paths: ["analyses"]
@@ -12,10 +10,9 @@ seed-paths: ["seeds"]
 macro-paths: ["macros"]
 snapshot-paths: ["snapshots"]
 
-clean-targets:  
+clean-targets:
   - "target"
   - "dbt_packages"
-
 
 models:
   nyc_taxi_lakehouse:
@@ -24,5 +21,9 @@ models:
       +schema: bronze
     silver:
       +schema: silver
+    gold:
+      +schema: gold
+seeds:
+  nyc_taxi_lakehouse:
     gold:
       +schema: gold
